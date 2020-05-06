@@ -1,17 +1,16 @@
-
-
 <div class="container">
     <div class="row">
       <div class="col-lg-3">
-        <%= render 'books/side', book: @book %>
+         <%= render 'books/side', book: @book, user: @user %>
       </div>
       <div class="col-lg-9">
-        <h2>Book</h2>
-        <table>
-         <tr>
-            <th>Title</th>
-            <th>Opinion</th>
-
+         <h2>Book</h2>
+         <table>
+         　<tr>
+            <thead>
+                <th>Title</th>
+                <th>Opinion</th>
+            </thead>
      
             <td>
                 <%= @book.title %>
@@ -19,8 +18,7 @@
             <td>
                 <%= @book.body %>
             </td>
-
-         </tr>
+         　</tr>
          </table>
       </div>
 

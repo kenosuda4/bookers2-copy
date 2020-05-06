@@ -10,6 +10,48 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if user_signed_in? %>
+      <br>
+      <br>
+      <br>
+      <header class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+          <nav class="nav navbar-nav navbar-left"></nav>
+          <nav class="text-muted"><span><strong>Bookers</strong></span></nav>
+          <nav>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to 'Home', user_path(current_user) , class: "glyphicon glyphicon-homes homes"%></li>
+              <li><%= link_to 'Users', users_path , class: "glyphicon glyphicon-user users"%></li>
+              <li><%= link_to 'Books', books_path , class: "glyphicon glyphicon-book books"%></li>
+              <li><%= link_to 'logout', destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out logout"%></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <% else %>
+    <br>
+    <br>
+    <br>
+      <header class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+          <nav class="nav navbar-nav navbar-left"></nav>
+          <nav class="text-muted"><span><strong>Bookers</strong></span></nav>
+          <nav>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to 'Home', root_path , class: "glyphicon glyphicon-homes homes"%></li>
+              <li><%= link_to 'About', home_about_path , class: "glyphicon glyphicon-link about"%></li>
+              <li><%= link_to 'Sign up', new_user_registration_path , class: "glyphicon glyphicon-edit sign_up"%></li>
+              <li><%= link_to 'Login',  new_user_session_path, class: "glyphicon glyphicon-log-in sign_in"%></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <% end %>
+    </header>
+    <br>
+    <br>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
