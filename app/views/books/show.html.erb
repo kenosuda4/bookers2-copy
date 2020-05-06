@@ -1,0 +1,30 @@
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <%= render 'books/side', book: @book %>
+      </div>
+      <div class="col-lg-9">
+        <h2>Book</h2>
+        <table>
+         <tr>
+            <th>Title</th>
+            <th>Opinion</th>
+
+     
+            <td>
+                <%= @book.title %>
+            </td>
+            <td>
+                <%= @book.body %>
+            </td>
+
+         </tr>
+         </table>
+      </div>
+
+
+
+    </div>
+</div>
