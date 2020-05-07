@@ -10,10 +10,13 @@
     <td><%= user.introduction %></td>
     </tr>
 </table>
-<%= link_to edit_user_path(current_user) do %>
-    <i class="glyphicon glyphicon-wrench"></i>
-<% end %>
+
+
+<br><br>
 <div class="row">
+    <%= link_to edit_user_path(current_user), class: "btn btn-default btn-block" do %>
+        <span class="glyphicon glyphicon-wrench"></span>
+    <% end %>
 </div>
 
 <h2>New book</h2>

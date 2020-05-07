@@ -6,10 +6,10 @@
     <% end %>
 <div class="container">
     <div class="row">
-      <div class="col-lg-3">
-         <%= render 'books/side', book: @book, user: @user %>
+      <div class="col-xs-3">
+         <%= render 'books/side', book: @new_book, user: @user %>
       </div>
-      <div class="col-lg-9">
+      <div class="col-xs-9">
          <h2>Book detail</h2>
          <table>
          　<tr>
@@ -23,18 +23,18 @@
            </tr>
            <tr>
             <td>
-            <a><%= attachment_image_tag @user, :profile_image, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size: "60x60" %></a>
+            <a><%= attachment_image_tag @book.user, :profile_image, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size: "60x60" %></a>
             </td>
             <td>
-                <%= @book.title %>
+                <%= link_to @book.title, book_path(@book.id) %>
             </td>
             <td>
                 <%= @book.body %>
             </td>
             <% if @book.user_id == current_user.id %>
             <td>
-              <%= link_to "Edit", edit_book_path(book.id), class: "edit_book_#{book.id} btn btn-success btn-sm btn_txt_color" %>
-              <%= link_to "Destroy", book_path(book.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_book_10349"%>
+              <%= link_to "Edit", edit_book_path(@book.id), class: "edit_book_#{@book.id} btn btn-success btn-sm btn_txt_color" %>
+              <%= link_to "Destroy", book_path(@book.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_book_10349"%>
           　 </td>
   　　　      <% end %>
          　</tr>
