@@ -11,6 +11,11 @@
      <div class="col-xs-3">
         <%= render 'books/side', book: @book, user: @user %>
      </div>
+    <% if flash[:notice] %>
+     　<div class="flash">
+       　<%= flash[:notice] %>
+     　</div>
+   <% end %>
     <div class="col-xs-9">
       <h3>Users</h3>
       <table class="table table-striped">
@@ -24,7 +29,7 @@
           <% @users.each do |user| %>
             <tr>
               <td>
-                
+              <a><%= attachment_image_tag user, :profile_image, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size: "60x60" %></a>
               </td>
               <td>
                 <%= user.name %>

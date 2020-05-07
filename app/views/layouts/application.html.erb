@@ -20,7 +20,7 @@
           <nav class="text-muted"><span><strong>Bookers</strong></span></nav>
           <nav>
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to 'Home', user_path(current_user) , class: "glyphicon glyphicon-homes homes"%></li>
+              <li><%= link_to 'Home', user_path(current_user) , class: "glyphicon glyphicon-home homes"%></li>
               <li><%= link_to 'Users', users_path , class: "glyphicon glyphicon-user users"%></li>
               <li><%= link_to 'Books', books_path , class: "glyphicon glyphicon-book books"%></li>
               <li><%= link_to 'logout', destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out logout"%></li>
@@ -51,6 +51,11 @@
     <br>
     <br>
     <main>
+    　<div>
+    　　<% flash.each do |key, value| %>
+      　　<%= content_tag(:div, value, class: "#{key}") %>
+      　<% end %>
+      </div>
       <%= yield %>
     </main>
   </body>

@@ -1,5 +1,8 @@
 <div class="container">
   <div class="row">
+     <div class="col-xs-3">
+     <h2>User info</h2>
+       <div class="row">
     <% if @user.errors.any? %>
       <%= @book.errors.count %>件のerrorが発生しました
       <% @user.errors.full_messages.each do |message| %>
@@ -7,9 +10,6 @@
       <% end %>
     <% end %>
    </div>
-  <div class="row">
-     <div class="col-xs-3">
-     <h2>User info</h2>
      <%= form_for(@user) do |f| %>
  
 
