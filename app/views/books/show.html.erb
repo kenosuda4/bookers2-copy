@@ -11,7 +11,7 @@
       </div>
       <div class="col-xs-9">
          <h2>Book detail</h2>
-         <table>
+         <table class="table table-striped">
          　<tr>
             <thead>
                 <th></th>
@@ -19,6 +19,7 @@
                 <th>Title</th>
 
                 <th>Opinion</th>
+                <th></th>
             </thead>
            </tr>
            <tr>
@@ -37,7 +38,10 @@
               <%= link_to "Edit", edit_book_path(@book.id), class: "edit_book_#{@book.id} btn btn-success btn-sm btn_txt_color" %>
               <%= link_to "Destroy", book_path(@book.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_book_10349"%>
           　 </td>
-  　　　      <% end %>
+  　　　      
+            <% else %>
+            <td></td>
+            <% end %>
          　</tr>
          </table>
       </div>
