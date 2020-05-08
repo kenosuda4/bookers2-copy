@@ -24,6 +24,7 @@
            <tr>
             <td>
             <a><%= attachment_image_tag @book.user, :profile_image, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size: "60x60" %></a>
+             <%= link_to @user.name, user_path(@user) %>
             </td>
             <td>
                 <%= link_to @book.title, book_path(@book.id) %>
