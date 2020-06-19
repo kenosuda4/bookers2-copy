@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# bookers2-copy
+
+#概要
+
+gemをテストするリポジトリ
+>>>>>>> 1d5ee316664648dd807e786cebae54cf47c30ac3
